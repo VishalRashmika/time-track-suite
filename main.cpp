@@ -148,11 +148,9 @@ int main(){
     //     std::cout << request_data << std::endl;
     // }
 
-    // std::string url {"https://boxd.it/29Qo"};
-    // std::cout << request.Get(url) << std::endl;
 
     int time {0};
-    // time = Letterboxd.get_time(request.Get(url));
+    time = Letterboxd.get_time(request.Get(urli));
 
     std::cout << time << std::endl;
 
