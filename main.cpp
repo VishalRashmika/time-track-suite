@@ -123,8 +123,11 @@ std::vector<std::vector<std::string>> read_csv(std::string filepath)
 }
 
 int main(){
+    Requests request;
+    Letterboxd Letterboxd;
 
     std::string filepath {"./tests/watched.csv"};
+
 
     std::vector<std::vector<std::string>> rows;
     rows = read_csv(filepath);
@@ -135,14 +138,17 @@ int main(){
         }
     }
 
-    Requests request;
-    Letterboxd Letterboxd;
+    for (int i = 0; i < rows.size(); i++){
+        std::cout << request_data << std::endl;
+        std::string request_data = request.Get(rows[i][1]);
+        std::cout << request_data << std::endl;
+    }
 
-    std::string url {"https://letterboxd.com/film/hit-man-2023/"};
+    // std::string url {"https://letterboxd.com/film/hit-man-2023/"};
     //std::cout << request.Get(url) << std::endl;
 
-    int time;
-    time = Letterboxd.get_time(request.Get(url));
+    int time {0};
+    // time = Letterboxd.get_time(request.Get(url));
 
     std::cout << time << std::endl;
 
