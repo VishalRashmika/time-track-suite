@@ -6,7 +6,7 @@
 
 #include "csv_parser.h"
 
-std::vector<std::vector<std::string>> read_csv(std::string filepath)
+std::vector<std::vector<std::string>> read_shit(std::string filepath)
 {
     std::ifstream file;
     file.open(filepath);

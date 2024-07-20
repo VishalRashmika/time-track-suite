@@ -149,9 +149,10 @@ int main(){
 
 
     CSV_parser parser;
-    std::string headach
-    parser.read_csv()
-
+    std::string hen {"./watched.csv"};
+    std::vector<std::vector<std::string>> dump;
+    dump = parser.read_shit(hen);
+    std::cout << "Rows dump: " << dump.size() << std::endl;
 
     return 0;
 }
