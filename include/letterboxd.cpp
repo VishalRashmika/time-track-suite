@@ -10,6 +10,7 @@ static void find_line(const std::string& original_text, const GumboAttribute& at
 {
     // attr = gumbo_get_attribute(&node->v.element.attributes, "class")) && strstr(cls_attr->value, cls_name)
     // original_text.data() -------> html code  
+    
   size_t attr_index = attr.original_value.data - original_text.data();
   //std::cout << attr.original_value.data << std::endl;
   size_t begin = original_text.rfind("\n", attr_index) + 50;
