@@ -134,18 +134,22 @@ int main(){
     std::cout << rows.size() << std::endl;
     for (int i = 0; i < rows.size(); i++){
         for (int j = 0; j < 2; j++){
-            std::cout << rows[i][j] << std::endl;
+            // std::cout << rows[i][j] << std::endl;
         }
     }
 
-    for (int i = 0; i < rows.size(); i++){
-        std::cout << request_data << std::endl;
-        std::string request_data = request.Get(rows[i][1]);
-        std::cout << request_data << std::endl;
-    }
+    std::string urli {"https://boxd.it/29Qo/"};
+    std::string shit = request.Get(urli);
+    std::cout << shit << std::endl;
 
-    // std::string url {"https://letterboxd.com/film/hit-man-2023/"};
-    //std::cout << request.Get(url) << std::endl;
+    // for (int i = 0; i < rows.size(); i++){
+    //     std::cout << rows[i][1] << std::endl;
+    //     std::string request_data = request.Get(rows[i][1]);
+    //     std::cout << request_data << std::endl;
+    // }
+
+    // std::string url {"https://boxd.it/29Qo"};
+    // std::cout << request.Get(url) << std::endl;
 
     int time {0};
     // time = Letterboxd.get_time(request.Get(url));
