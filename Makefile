@@ -2,6 +2,7 @@
 main: main.o letterboxd.o request.o csv_parser.o
 	g++ main.o csv_parser.o letterboxd.o -lgumbo request.o  -lcurl -o main
 	rm *.o
+	./main
 
 main.o: main.cpp
 	g++ -c main.cpp -lgumbo -lcurl
