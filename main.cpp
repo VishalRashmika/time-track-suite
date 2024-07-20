@@ -128,9 +128,8 @@ int main(){
 
     std::vector<std::vector<std::string>> rows;
     rows = read_csv(filepath);
-
     std::cout << rows.size() << std::endl;
-    for (int i = 0; i < rows.size() - 1; i++){
+    for (int i = 0; i < rows.size(); i++){
         for (int j = 0; j < 2; j++){
             std::cout << rows[i][j] << std::endl;
         }
@@ -146,13 +145,6 @@ int main(){
     time = Letterboxd.get_time(request.Get(url));
 
     std::cout << time << std::endl;
-
-
-    CSV_parser parser;
-    std::string hen {"./watched.csv"};
-    std::vector<std::vector<std::string>> dump;
-    dump = parser.read_shit(hen);
-    std::cout << "Rows dump: " << dump.size() << std::endl;
 
     return 0;
 }
