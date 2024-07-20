@@ -138,7 +138,7 @@ int main(){
         }
     }
 
-    std::string urli {"https://boxd.it/29Qo/"};
+    std::string urli {"https://letterboxd.com/akiraarashikage/films/"};
     std::string shit = request.Get(urli);
     std::cout << shit << std::endl;
 
