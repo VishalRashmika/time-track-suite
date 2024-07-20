@@ -5,29 +5,30 @@
 #include <sstream>
 using namespace std;  
   
-int main() {  
-  
-  ifstream infile("report_card.csv");  
-  vector<vector<string>> rows;  
+vector<vector<string>> rows;  
+
+int main() {    
+  ifstream infile("../tests/watched.csv");  
   
   // Read CSV into rows  
-  string line;   
+  string line;
+  int counter {0};   
   while(getline(infile, line)) {  
-    vector<string> row;  
+    vector<string> row;
       
     string field;  
     stringstream ss(line);  
-  
+    // if (counter == 1){}
     while(getline(ss, field, ',')) {  
       row.push_back(field);  
     }  
   
     rows.push_back(row);  
   }  
-  std::cout << rows[0][0] << std::endl;
-  std::cout << rows[1][0] << std::endl;
-  std::cout << rows[0][1] << std::endl;
+  std::cout <<  rows.size() << std::endl;
+  std::cout << rows[0][3] << std::endl;
   std::cout << rows[1][1] << std::endl;
+  std::cout << rows[1][3] << std::endl;
   
   return 0;  
 } 
@@ -50,4 +51,40 @@ int main() {
 //   }  
   
 //   outfile.close();  
+
+
+#include <iostream>  
+#include <fstream>  
+#include <string>  
+#include <vector>  
+#include <sstream>
+using namespace std;  
+  
+vector<vector<string>> rows;  
+
+int main() {    
+  ifstream infile("../tests/watched.csv");  
+  
+  // Read CSV into rows  
+  string line;   
+  while(getline(infile, line)) {  
+    vector<string> row;  
+      
+    string field;  
+    stringstream ss(line);  
+    
+    while(getline(ss, field, ',')) {  
+      row.push_back(field);  
+    }  
+  
+    rows.push_back(row);  
+  }  
+  std::cout <<  rows.size() << std::endl;
+  std::cout << rows[0][3] << std::endl;
+  std::cout << rows[1][1] << std::endl;
+  std::cout << rows[1][3] << std::endl;
+  
+  return 0;  
+} 
+
 */
