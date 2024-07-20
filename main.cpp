@@ -7,11 +7,12 @@ int main(){
     Letterboxd Letterboxd;
 
     std::string url {"https://letterboxd.com/film/hit-man-2023/"};
+    std::cout << request.Get(url) << std::endl;
 
-    int time;
-    time = Letterboxd.get_time(request.Get(url));
+    // int time;
+    // time = Letterboxd.get_time(request.Get(url));
 
-    std::cout << time << std::endl;
+    // std::cout << time << std::endl;
 
 
     return 0;
