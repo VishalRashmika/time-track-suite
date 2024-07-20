@@ -10,9 +10,10 @@ int main(){
     CSV_parser parser; 
 
     std::vector<std::vector<std::string>> data;
-    std::string filepath {"../tests/wathched.csv"};
+    std::string filepath {"./wathched.csv"};
 
-    // std::cout << parser.read_csv(filepath).size() <<std::endl;
+    data = parser.read_csv(filepath);
+    std::cout << data.size() <<std::endl;
 
 
     std::cout << "awdawd" << std::endl;

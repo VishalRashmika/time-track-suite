@@ -10,13 +10,8 @@ using namespace std;
 
 vector<vector<string>> CSV_parser::read_csv(std::string filepath)
 {
-
-    // std::string location{"/home/akira/Downloads/letterboxd-akiraarashikage-2024-07-20-04-10-utc/wathched.csv"};
-
     ifstream infile(filepath);
     vector<vector<string>> rows;
-
-    // std::cout << "Location : " << location << std::endl;
     
     // Read CSV into rows
     string line;
@@ -39,7 +34,7 @@ vector<vector<string>> CSV_parser::read_csv(std::string filepath)
         rows.push_back(row);
     }
 
-    // std::cout << rows.size() << std::endl;
+    std::cout << "Row Size : " << rows.size() << std::endl;
     // std::cout << rows[1][0] << std::endl/;
 
     return rows;
