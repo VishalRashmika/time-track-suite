@@ -1,5 +1,5 @@
 
-main: main.o letterboxd.o request.o
+main: main.o letterboxd.o request.o csv_parser.o
 	g++ main.o csv_parser.o letterboxd.o -lgumbo request.o  -lcurl -o main
 	rm *.o
 
@@ -14,6 +14,7 @@ request.o: ./include/request.cpp ./include/request.h
 
 csv_parser.o: ./include/csv_parser.cpp ./include/csv_parser.h
 	g++ -c ./include/csv_parser.cpp
+
 clean: 
 	rm main
 

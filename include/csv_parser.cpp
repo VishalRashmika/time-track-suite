@@ -8,11 +8,15 @@
 
 using namespace std;  
   
-vector<vector<string>> rows;  
+vector<vector<string>> rows;
 
-vector<vector<string>> CSV_parser::read_csv(std::string filepath) {    
+vector<vector<string>> read_csv(std::string filepath) {    
+//   std::ostringstream address;
+//   address << (void const *)filepath;
+//   std::string something = address.str();
+
   ifstream infile(filepath);  
-  
+    std::cout << filepath <<std::endl;
   // Read CSV into rows  
   string line;
   int counter;   
@@ -29,19 +33,23 @@ vector<vector<string>> CSV_parser::read_csv(std::string filepath) {
         counter += 1;
     }  
     rows.push_back(row);  
-  }  
-  std::cout <<  rows.size() << std::endl;
-  std::cout << rows[0][0] << std::endl;
-  std::cout << rows[0][1] << std::endl;
+  }
 
-  std::cout << rows[1][0] << std::endl;
-  std::cout << rows[1][1] << std::endl;
+    std::cout <<  rows.size() << std::endl;
+    //   std::cout << rows[0][0] << std::endl;
+//   std::cout << rows[0][1] << std::endl;
+    //  std::cout << rows[1][0] << std::endl;
+    //   std::cout << rows[1][1] << std::endl;
 
-  std::cout << rows[2][0] << std::endl;
-  std::cout << rows[2][1] << std::endl;
-  
   return rows;
 } 
+
+int main(){
+    std::vector<std::vector<std::string>> data;
+    std::string filepath {"../tests/wathched.csv"};
+    data = read_csv(filepath);
+    return 0;
+}
 
 /*
 //   // Create a new record  
