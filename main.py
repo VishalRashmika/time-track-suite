@@ -7,7 +7,7 @@ class MyGUI(QMainWindow):
     def __init__(self):
         super(MyGUI,self).__init__()
         uic.loadUi("./UI/splash-screen/form.ui",self)
-        self.setWindowFlag(Qt.FramelessWindowHint)
+        self.setWindowFlag(Qt.WindowType.FramelessWindowHint)
         self.show()
 
         # event handlers
