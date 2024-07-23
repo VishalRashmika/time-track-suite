@@ -4,6 +4,7 @@ from PyQt6 import uic
 from PyQt6.QtCore import Qt
 import time
 import sys
+
 class SplashScreen(QMainWindow):
     def __init__(self):
         super(SplashScreen,self).__init__()
