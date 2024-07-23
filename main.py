@@ -47,3 +47,6 @@ if __name__ == '__main__':
     # splash.en
 
     app.exec()
+
+
+# https://github.com/Wanderson-Magalhaes/Splash_Screen_Python_PySide2
