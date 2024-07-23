@@ -1,26 +1,48 @@
 from PyQt6.QtWidgets import *
+from PyQt6.QtWidgets import QSplashScreen
 from PyQt6 import uic
 from PyQt6.QtCore import Qt
-
-class MyGUI(QMainWindow):
-    fileName = ""
+import time
+import sys
+class SplashScreen(QMainWindow):
     def __init__(self):
-        super(MyGUI,self).__init__()
-        uic.loadUi("./UI/splash-screen/form.ui",self)
+        super(SplashScreen,self).__init__()
+        uic.loadUi("./UI/SplashScreen.ui",self)
         self.setWindowFlag(Qt.WindowType.FramelessWindowHint)
-        self.show()
 
+    def progress(self):
+        for i in range(100):
+            time.sleep(0.1)
+            self.progressBar.setValue(i)
         # event handlers
         # self.btnBrowse.clicked.connect(self.get_file_location)
 
-        
+class ImportScreen(QMainWindow):
+    def __init__(self):
+        super(QMainWindow,self).__init__()
+        uic.loadUi("./UI/ImportScreen.ui")
 
 
 
-def main():
-    app = QApplication([])
-    window = MyGUI()
-    app.exec()
+# def main():
+#     app = QApplication([])
+#     window = MyGUI()
+#     app.exec()
 
 if __name__ == '__main__':
-    main()
+    # main()
+    app = QApplication(sys.argv)
+
+    splash = SplashScreen()
+    splash.show()
+    splash.progress()
+    splash.close()
+
+    import_page = ImportScreen()
+    import_page.show()
+
+    
+
+    # splash.en
+
+    app.exec()
