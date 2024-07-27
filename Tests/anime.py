@@ -18,8 +18,15 @@ def get_anilist_data(anilist_url):
     response = requests.get(anilist_url)
     soup = BeautifulSoup(response.content, 'html.parser')
     text = str(soup.find_all(class_="data-set"))
-    # text2 = str(text.find_all(class_="type"))
 
-    return text
+    soup2 = BeautifulSoup(text, 'html.parser')
+    # text2 = str(soup2.find_all(class_="value"))
+    text2 = soup2.find_all(class_="value")
+    episodes = str(str(text2[1]).split(">")[1]).split("<")[0]
+    duration = str(str(text2[2]).split(">")[1]).split(" ")[0]
 
-print(get_anilist_data(anilist))
+    return episodes, duration
+
+fir, sec = get_anilist_data(anilist)
+
+print(f"{fir} : {sec}")
