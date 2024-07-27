@@ -22,15 +22,17 @@ def get_anilist_data(anilist_url):
     text2 = soup2.find_all(class_="value")
     episodes = str(str(text2[1]).split(">")[1]).split("<")[0]
     duration = str(str(text2[2]).split(">")[1]).split(" ")[0]
+    watchtime = int(duration) * int(episodes)
 
-    return episodes, duration
+    return watchtime
 
 def get_myanimelist_data(my_animelist_url):
     response = requests.get(my_animelist_url)
     soup = BeautifulSoup(response.content, 'html.parser')
     episodes = str(str(soup.find_all(class_="spaceit_pad")[4]).split(" ")[4]).strip("n")
     duration = str(soup.find_all(class_="spaceit_pad")[16]).split(" ")[4]
-    
-    return episodes, duration
+    watchtime = int(duration) * int(episodes)
+
+    return watchtime
 
 print(get_myanimelist_data(myanimelist))
