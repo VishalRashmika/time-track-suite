@@ -1,0 +1,7 @@
+{
+    "files": [
+        "tts.py",
+        "form.ui",
+        "resources.qrc"
+    ]
+}
